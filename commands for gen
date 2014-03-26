@@ -1,0 +1,19 @@
+
+Lets you input a bunch of commands dynamically:
+./f8l8 - 10 /home/f/f8l8/CS221_A2 -mys01
+
+
+Write directly:
+./pp2-hint0 100000 | ./a1b2 - 10 . -mys01 -mys02
+
+
+
+Write to text, then write to files:
+./pp3-hint0 100000 > pp2-hint0-output-100K.txt
+./a1b2 pp2-hint0-output-100K.txt 10 . -mys01 -mys02
+
+
+Open matlab:
+matlab -nodesktop -nosplash
+>> data = load('mys01', '-ascii')
+>> plot(data(:,1),data(:,2))
