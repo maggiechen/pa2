@@ -1,0 +1,13 @@
+We found the array based structures by inserting the numbers from 1 to 100000 in order and graphing the data received. 
+mys05 and mys06 are the arrays because at certain inserts, the execution time increases drastically. These correspond to resizes in the arrays, where we have to copy all of the values in the array to a new, larger array. The fact that these sudden jumps in execution time grow larger each time also supports this, because every time we resize, we have more and more elements that we need to copy to the new array. 
+
+At other times, the graphs are linear, meaning that the inserts are constant time. This makes sense because hashtables have an insert of O(1), and by inserting the numbers in order (since we just attach them to the back), we will be getting the best case time of a sorted array, which is also O(1). 
+
+We know that mys06 is the sorted vector because when we delete the numbers from the structure in order from 1 to 100000, the runtime of our program increases the most at the lower numbers. This is because if we delete 1, we will have to shift 99999 numbers down (since it's a resizing array). As we do more deletes, the number of elements that we need to shift decreases, causing the rate of increase to decrease. That's why it looks like the graph is becoming flat near the end.
+
+We know that mys05 is the hashtable because if we do the same deletes for the hashtable, the graph looks linear. This makes sense because deletes in good hashmaps are relatively constant time. 
+
+If we insert in reverse order, from 100000 to 1, the graph for mys05 is still linear with some sudden jumps from the resizes, but the graph for mys06 seems to increase exponentially. This also indicates that mys06 is the sorted array becuse inserting the numbers in reverse is the worse case, which means the rate of increase of the graph will increase at a rate of O(n) (the time for worst case insert in a sorted array). We see from the graph that the performance is so bad that we can no longer even see the time taken for resizing because the inserts take so long that it dwarfs in comparison. 
+
+ 
+
